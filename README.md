@@ -7,6 +7,7 @@ Sample spring-mvc/hibernate application to demo following:
 -interceptor
 -custom tag using java class
 -custom tag using tag file
+-application context listener
 
 ~~~
 TODO:
