@@ -24,17 +24,12 @@
         <name>filetag</name>
         <path>/META-INF/tags/myfile.tag</path>
     </tag-file>
-    
-    
-
+        
 
     <function>
         <name>isEven</name>
         <function-class>myapp.func.MyFunctions</function-class>
         <function-signature>boolean isEven(java.lang.Integer)</function-signature>
     </function>
-
-
-   
     
 </taglib>
