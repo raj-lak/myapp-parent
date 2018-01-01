@@ -18,6 +18,10 @@
         <servlet-name>myapp-dispatcher</servlet-name>
         <url-pattern>/book</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>myapp-dispatcher</servlet-name>
+        <url-pattern>/init</url-pattern>
+    </servlet-mapping>
     
     <context-param>
         <param-name>contextConfigLocation</param-name>

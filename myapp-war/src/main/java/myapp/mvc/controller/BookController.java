@@ -1,5 +1,8 @@
 package myapp.mvc.controller;
 
+import java.util.Arrays;
+import java.util.List;
+
 import myapp.model.Book;
 import myapp.mvc.annotation.MyAnno;
 import myapp.service.stub.IBookService;
@@ -25,12 +28,29 @@ public class BookController {
         ResponseEntity<String> response = new ResponseEntity<>("Response:<br>" + book.toString(),
                  HttpStatus.OK);
         return response;
-        
     }
+
+    @RequestMapping( "/init")
+    public ResponseEntity<String> init() {
+        
+        Arrays.asList("book1","book2")
+             .stream()
+             .forEach(e -> bookService.saveBook(e));
+        
+        ResponseEntity<String> response = new ResponseEntity<>("Saved books..." ,
+                 HttpStatus.OK);
+        return response;
+    }
+
+
     
     @RequestMapping( path="/books.do", method=RequestMethod.GET)
-    public String getBooks(Model model, @MyAnno String clientIPAddress) {
-        model.addAttribute("result", clientIPAddress);
+    public String getBooks(Model model, @MyAnno String myAnno) {
+        model.addAttribute("result", myAnno);
+        
+        List<Book> bookList = bookService.getAll();
+        model.addAttribute("bookList", bookList);
+        
         return "books";
         
     }

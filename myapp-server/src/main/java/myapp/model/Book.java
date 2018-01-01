@@ -1,9 +1,23 @@
 package myapp.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table (name = "book")
 public class Book {
 
+    @Column (name = "bookId")
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     Integer bookId;
+    
+    @Column (name = "title")
     String  title;
     
     
@@ -13,6 +27,9 @@ public class Book {
         this.title = title;
     }
     
+    public Book() {
+    }
+
     public Integer getBookId() {
         return bookId;
     }
@@ -30,7 +47,5 @@ public class Book {
     public String toString() {
         return "Book [bookId=" + bookId + ", title=" + title + "]";
     }
-    
-    
     
 }

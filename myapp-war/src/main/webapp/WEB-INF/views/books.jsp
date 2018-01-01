@@ -14,3 +14,8 @@ reached the jsp: ${result}
   <c:if test="${myapp:isEven(3)}">
         3 is not even
  </c:if> 
+ 
+ <br>
+ <c:forEach items="${bookList}" var="book">
+    ${book.bookId} - ${book.title} <br>
+ </c:forEach>
