@@ -14,4 +14,6 @@ public interface IBookDAO {
 
     public void remove(Book book);
 
+    public List<Book> findByBookIdGreaterThan(Integer bookId);
+
 }

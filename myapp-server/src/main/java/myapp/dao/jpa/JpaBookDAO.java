@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -54,6 +55,15 @@ public class JpaBookDAO implements IBookDAO {
     @Override
     public void remove(Book book) {
         entityManager.remove(book);
+    }
+    
+    @Override
+    public List<Book> findByBookIdGreaterThan(Integer bookId) {
+        TypedQuery<Book> typedQuery = entityManager.createNamedQuery("Book.findByBookIdGreaterThan", Book.class);
+        
+        typedQuery.setParameter("bookId", bookId)
+                     .getResultList();
+        return typedQuery.getResultList();
     }
     
 

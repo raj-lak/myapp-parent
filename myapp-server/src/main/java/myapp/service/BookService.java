@@ -43,8 +43,14 @@ public class BookService implements IBookService {
         return bookDAO.findByTitle(title);
     }
 
+    @Override
     public void delete(Book book) {
         bookDAO.remove(book);
+    }
+
+    @Override
+    public List<Book> findByBookIdGreaterThan(Integer bookId) {
+        return bookDAO.findByBookIdGreaterThan(bookId);
     }
     
 

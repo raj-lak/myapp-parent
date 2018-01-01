@@ -20,13 +20,11 @@ Add following to server-context xml
 -service and dao classes
 - JPA ORM
 - JPA named query
+-JUnit testing
+-JPA named query from xml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 ~~~~
--JUnit testing
--service and repository annotation
--JPA CRUD operations
--JPA named query from xml
 -JPA named native query from xml
 -sql-mapping with lombok
 -custom query handler

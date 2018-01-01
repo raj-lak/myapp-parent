@@ -6,6 +6,8 @@
 
 
 	<persistence-unit name="testingSetup">
+	    <mapping-file>META-INF/jpa/BookJpaQueries.xml</mapping-file>
+	    
 	    <class>myapp.model.Book</class>
 	
 	    <properties>
@@ -15,6 +17,7 @@
  	        <property name="hibernate.hbm2ddl.auto" value="create"/>
  	        -->
 	    </properties>
+	    
 	    
 	</persistence-unit>
 	

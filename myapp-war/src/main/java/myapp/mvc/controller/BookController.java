@@ -42,14 +42,27 @@ public class BookController {
         return response;
     }
 
-
+    @RequestMapping( path="/books.do", method=RequestMethod.POST)
+    public String postBooks(Model model) {
+        Arrays.asList("book1","book2")
+        .stream()
+        .forEach(e -> bookService.saveBook(e));
+        return "redirect:/books.jsp";
+    }
     
     @RequestMapping( path="/books.do", method=RequestMethod.GET)
     public String getBooks(Model model, @MyAnno String myAnno) {
+        //annotation
         model.addAttribute("result", myAnno);
         
+        //createQuery
         List<Book> bookList = bookService.getAll();
         model.addAttribute("bookList", bookList);
+        
+        //Named query
+        List<Book> namedQueryList = bookService.findByBookIdGreaterThan(1);
+        model.addAttribute("namedQueryList", namedQueryList);
+        
         
         return "books";
         
