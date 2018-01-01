@@ -12,5 +12,17 @@
       </query>
     </named-query>
     
+    <named-native-query name="Book.findByTitle" result-set-mapping="book_mapping">
+    <query> select bookId, title from book where title = :title
+    </query>
+    </named-native-query>
+    
+    <sql-result-set-mapping name="book_mapping">
+      <constructor-result target-class="myapp.model.BookView">
+      <column name="bookId" class="java.lang.Integer"/>
+      <column name="title"/>
+      </constructor-result>
+    
+    </sql-result-set-mapping>
  
  </entity-mappings>

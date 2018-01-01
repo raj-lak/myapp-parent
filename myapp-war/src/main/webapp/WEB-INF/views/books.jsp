@@ -10,15 +10,16 @@
 <body bgcolor='wheat'>
   <div align='center' style="width=500px; margin: auto; border: 3px solid #73AD21;">
     <hr>
-    Param passing and custom annotation: <br> Reached the jsp: ${result}
+    <b>Param passing and custom annotation:</b> <br> 
+       Reached the jsp: ${result}
     <hr>
-    Taglib: <br>
+    <b>Custom Taglib: </b> <br>
     <myapp:mytag param1="aaa" />
     <hr>
-    File Tag: <br>
+    <b>File Tag: </b><br>
     <myapp:filetag param1="wwww" />
     <hr>
-    JSP Custom Function: <br>
+    <b>JSP Custom Function:</b> <br>
     <c:if test="${myapp:isEven(4)}">
         4 is even <br>
     </c:if>
@@ -32,7 +33,7 @@
 </form:form>
 
     <hr>
-    Create Query: <br>
+    <b>Create Query:</b> <br>
     <c:if test="${not empty bookList}">
       <table border=1>
         <tr>
@@ -49,7 +50,7 @@
     </c:if>
     
         <hr>
-    Named Query: <br>
+    <b>Named Query:</b> <br>
     <c:if test="${not empty namedQueryList}">
       <table border=1>
         <tr>
@@ -65,6 +66,11 @@
       </table>
     </c:if>
     
+    <hr>
+    <b>Named Native Query using sql-mapping:</b> <br>
+    <c:if test="${not empty bookView}">
+       ${bookView.bookId} - ${bookView.title}
+    </c:if>
     
   </div>
 </body>

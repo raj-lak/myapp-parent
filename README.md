@@ -11,21 +11,21 @@ Completed:
 -custom tag using tag file
 -application context listener
 
-Add following to server-context xml
+Handle following using spring server-context xml
 - hsql datasource
 - entity manager factory that uses hsql datasource
 - hibernate as JPA vendor
 - transaction manager, transaction template, transaction advice 
 
 -service and dao classes
-- JPA ORM
-- JPA named query
+-JPA ORM
+-JPA named query
 -JUnit testing
 -JPA named query from xml
+-JPA named native query from xml
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 ~~~~
--JPA named native query from xml
 -sql-mapping with lombok
 -custom query handler
 -Spring CRUD repository

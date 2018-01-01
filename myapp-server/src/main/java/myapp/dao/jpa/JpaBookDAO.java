@@ -12,6 +12,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import myapp.dao.stub.IBookDAO;
 import myapp.model.Book;
+import myapp.model.BookView;
 
 @Repository
 public class JpaBookDAO implements IBookDAO {
@@ -53,6 +54,18 @@ public class JpaBookDAO implements IBookDAO {
     }
 
     @Override
+    public BookView findByTitleNative(String title) {
+        TypedQuery<BookView> typedQuery = entityManager.createNamedQuery("Book.findByTitle", BookView.class);
+        typedQuery.setMaxResults(1);
+        typedQuery.setParameter("title", title);
+        return typedQuery.getResultList()
+                         .stream()
+                         .findFirst()
+                          .orElse(null);
+    }
+
+    
+    @Override
     public void remove(Book book) {
         entityManager.remove(book);
     }
@@ -65,6 +78,7 @@ public class JpaBookDAO implements IBookDAO {
                      .getResultList();
         return typedQuery.getResultList();
     }
+    
     
 
 }

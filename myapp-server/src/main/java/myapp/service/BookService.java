@@ -4,6 +4,7 @@ import java.util.List;
 
 import myapp.dao.stub.IBookDAO;
 import myapp.model.Book;
+import myapp.model.BookView;
 import myapp.service.stub.IBookService;
 
 import org.slf4j.Logger;
@@ -42,7 +43,12 @@ public class BookService implements IBookService {
         LOG.info("title:{}", title); //info level needed to see logs during unit test
         return bookDAO.findByTitle(title);
     }
-
+    
+    @Override
+    public BookView findByTitleNative(String title) {
+        LOG.info("title:{}", title); //info level needed to see logs during unit test
+        return bookDAO.findByTitleNative(title);
+    }
     @Override
     public void delete(Book book) {
         bookDAO.remove(book);

@@ -3,6 +3,6 @@
 <%@ tag body-content="empty" %>
 <%@ attribute name="param1" rtexprvalue="true" required="true" %> 
 
-<b>
-Param on file tag: ${param1}
-</b>
+<span style="color:blue">
+  Param on file tag: ${param1}
+</span>

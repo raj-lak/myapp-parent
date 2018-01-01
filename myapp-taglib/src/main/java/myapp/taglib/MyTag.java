@@ -37,7 +37,10 @@ public class MyTag extends TagSupport {
     public int doStartTag() throws JspException {
         try {
             JspWriter out = pageContext.getOut();
-            out.print("<b>Param1:</b>" + param1);
+            out.print("<span style='color:blue'>");
+            out.print("Param1:" + param1);
+            out.print("</span>");
+          
         } catch (IOException e) {
             throw new JspException(e);
         }

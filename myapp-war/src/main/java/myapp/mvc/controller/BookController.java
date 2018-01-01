@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import myapp.model.Book;
+import myapp.model.BookView;
 import myapp.mvc.annotation.MyAnno;
 import myapp.service.stub.IBookService;
 
@@ -63,7 +64,10 @@ public class BookController {
         List<Book> namedQueryList = bookService.findByBookIdGreaterThan(1);
         model.addAttribute("namedQueryList", namedQueryList);
         
-        
+        //NamedNative query
+        BookView bookView = bookService.findByTitleNative("book2");
+        model.addAttribute("bookView", bookView);
+
         return "books";
         
     }
