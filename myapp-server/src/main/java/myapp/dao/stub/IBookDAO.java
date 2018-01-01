@@ -10,4 +10,8 @@ public interface IBookDAO {
 
     public List<Book> getAll();
 
+    public Book findByTitle(String title);
+
+    public void remove(Book book);
+
 }

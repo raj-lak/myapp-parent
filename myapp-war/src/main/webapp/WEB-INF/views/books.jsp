@@ -1,21 +1,47 @@
 <%@ taglib uri="http://myapp/tags" prefix="myapp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-reached the jsp: ${result}
-<br>
-<myapp:mytag param1="aaa"/>
-<br> 
-<myapp:filetag param1="wwww" /> 
-<br>
-  <c:if test="${myapp:isEven(4)}">
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body bgcolor='wheat'>
+  <div align='center'>
+    <hr>
+    Param passing and custom annotation: <br> Reached the jsp: ${result}
+    <hr>
+    Taglib: <br>
+    <myapp:mytag param1="aaa" />
+    <hr>
+    File Tag: <br>
+    <myapp:filetag param1="wwww" />
+    <hr>
+    JSP Function: <br>
+    <c:if test="${myapp:isEven(4)}">
         4 is even
- </c:if> 
- 
-  <c:if test="${myapp:isEven(3)}">
+ </c:if>
+
+    <c:if test="${myapp:isEven(3)}">
         3 is not even
- </c:if> 
- 
- <br>
- <c:forEach items="${bookList}" var="book">
-    ${book.bookId} - ${book.title} <br>
- </c:forEach>
+ </c:if>
+
+    <hr>
+    CRUD Operations: <br>
+    <c:if test="${not empty bookList}">
+      <table border=1>
+        <tr>
+          <td>BookId</td>
+          <td>Title</td>
+        </tr>
+        <c:forEach items="${bookList}" var="book">
+          <tr>
+            <td>${book.bookId}</td>
+            <td>${book.title}</td>
+          </tr>
+        </c:forEach>
+
+      </table>
+    </c:if>
+  </div>
+</body>
+</html>

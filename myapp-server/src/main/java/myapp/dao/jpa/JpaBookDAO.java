@@ -43,6 +43,18 @@ public class JpaBookDAO implements IBookDAO {
         return entityManager.createQuery("select e from Book e", Book.class)
                 .getResultList();
     }
+
+    @Override
+    public Book findByTitle(String title) {
+        return entityManager.createQuery("select e from Book e where title = :title", Book.class)
+                .setParameter("title", title)
+                .getSingleResult();
+    }
+
+    @Override
+    public void remove(Book book) {
+        entityManager.remove(book);
+    }
     
 
 }

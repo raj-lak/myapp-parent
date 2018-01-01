@@ -21,13 +21,19 @@ public class Book {
     String  title;
     
     
+    
+    public Book() {
+        super();
+    }
+
     public Book(Integer bookId, String title) {
         super();
         this.bookId = bookId;
         this.title = title;
     }
     
-    public Book() {
+    public Book(String title) {
+        this.title = title;
     }
 
     public Integer getBookId() {

@@ -9,5 +9,6 @@ public interface IBookService {
   public Book getBook(Integer bookId);
   public void saveBook(String title);
   public List<Book> getAll();
+  public Book findByTitle(String string);
   
 }
