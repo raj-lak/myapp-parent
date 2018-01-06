@@ -714,9 +714,11 @@
     </build>
     
     <modules>
+        
         <module>myapp-server</module>
         <module>myapp-taglib</module>
         <module>myapp-war</module>
+        
    </modules>
            
 </project>

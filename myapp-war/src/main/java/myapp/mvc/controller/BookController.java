@@ -3,6 +3,7 @@ package myapp.mvc.controller;
 import java.util.Arrays;
 import java.util.List;
 
+import myapp.dao.repository.QueryRepository;
 import myapp.model.Book;
 import myapp.model.BookView;
 import myapp.mvc.annotation.MyAnno;
@@ -22,6 +23,9 @@ public class BookController {
     
     @Autowired
     IBookService bookService;
+    
+    @Autowired
+    QueryRepository queryRepo;
     
     @RequestMapping( "/book")
     public ResponseEntity<String> getBook() {
@@ -48,7 +52,9 @@ public class BookController {
         Arrays.asList("book1","book2")
         .stream()
         .forEach(e -> bookService.saveBook(e));
+        
         return "redirect:/books.jsp";
+        
     }
     
     @RequestMapping( path="/books.do", method=RequestMethod.GET)
@@ -67,6 +73,9 @@ public class BookController {
         //NamedNative query
         BookView bookView = bookService.findByTitleNative("book2");
         model.addAttribute("bookView", bookView);
+        
+        System.out.println(queryRepo.getQuery("GET_BOOKS"));
+        System.out.println(queryRepo.getQuery("GET_BOOKS2"));
 
         return "books";
         

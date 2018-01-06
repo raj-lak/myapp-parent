@@ -53,7 +53,7 @@ public class BookDAOTest {
     }
     
     @Test
-    public void shouldBeABleToQueryForObjects() {
+    public void shouldBeAbleToQueryForObjects() {
         shouldBeAbleToPersistAnObject();
         assertEquals(1, entityManager.createQuery("from Book where title = 'book1'").getResultList().size());
         assertEquals(0, entityManager.createQuery("from Book where title = 'book2'").getResultList().size());

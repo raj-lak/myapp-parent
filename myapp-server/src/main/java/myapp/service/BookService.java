@@ -2,6 +2,7 @@ package myapp.service;
 
 import java.util.List;
 
+import myapp.dao.repository.QueryRepository;
 import myapp.dao.stub.IBookDAO;
 import myapp.model.Book;
 import myapp.model.BookView;
@@ -17,6 +18,9 @@ public class BookService implements IBookService {
 
     private static final Logger LOG = LoggerFactory.getLogger(BookService.class);
 
+    @Autowired
+    QueryRepository queryRepo;
+    
     @Autowired
     IBookDAO bookDAO;
     

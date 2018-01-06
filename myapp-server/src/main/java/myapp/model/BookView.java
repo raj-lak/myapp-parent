@@ -1,14 +1,12 @@
 package myapp.model;
 
+import lombok.AllArgsConstructor;
 
+
+@AllArgsConstructor
 public class BookView {
     Integer bookId;
     String  title;
-    
-    public BookView(Integer bookId, String title) {
-        this.bookId = bookId;
-        this.title = title;
-    }
     
     public Integer getBookId() {
         return bookId;

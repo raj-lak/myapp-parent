@@ -20,16 +20,24 @@ Handle following using spring server-context xml
 -service and dao classes
 -JPA ORM
 -JPA named query
--JUnit testing
 -JPA named query from xml
 -JPA named native query from xml
+
+-JUnit testing and injecting test-spring-context
+
+-BaseJpaDAO create common methods using generic-types
+-sql-mapping with lombok
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
 ~~~~
--sql-mapping with lombok
+
 -custom query handler
 -Spring CRUD repository
 -spring tags and data binding
 -display tablular data use data-tables
+-single sign on filter
+-gson convertor
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

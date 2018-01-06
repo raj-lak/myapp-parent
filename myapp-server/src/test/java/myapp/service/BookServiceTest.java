@@ -39,8 +39,9 @@ public class BookServiceTest {
         Assert.assertNotNull(book);
         Assert.assertTrue("book1".equals(book.getTitle()));
         
-        Assert.assertEquals("book1", book.getTitle());
+       // Assert.assertEquals("book1", book.getTitle());
         bookService.delete(book);
+        
         exception.expect(NoResultException.class);
         book = bookService.findByTitle("book1");
 
