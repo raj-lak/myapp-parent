@@ -26,7 +26,7 @@ Handle following using spring server-context xml
 -JUnit testing and injecting test-spring-context
 
 -BaseJpaDAO create common methods using generic-types
--sql-mapping with lombok
+-sql-mapping with lombok (***lombok not used anymore by team)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO:
